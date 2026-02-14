@@ -1,11 +1,203 @@
 <%- include("partials/header") %>
 
-    <div class="form-box">
-        <h2>Contact Us</h2>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button class="btn">Send</button>
-    </div>
+<!-- Contact Page -->
+<section class="contact-page">
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <span class="hero-badge">Get in Touch</span>
+            <h1 class="page-title">We'd Love to Hear<br><span class="gradient-text">From You</span></h1>
+            <p class="page-subtitle">Have questions? We're here to help you 24/7</p>
+        </div>
 
-    <%- include("partials/footer") %>
+        <div class="contact-layout">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <div class="form-container">
+                    <h2 class="form-title">Send us a Message</h2>
+                    <p class="form-description">Fill out the form below and we'll get back to you as soon as possible</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">
+                                    <i class="fas fa-user"></i>
+                                    First Name
+                                </label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">
+                                    <i class="fas fa-user"></i>
+                                    Last Name
+                                </label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i>
+                                Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Subject
+                            </label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Issue</option>
+                                <option value="product">Product Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i>
+                                Your Message
+                            </label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell us more about your inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info-section">
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out to us through any of the following channels</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Visit Us</h4>
+                                <p>123 Shopping Street<br>Mumbai, Maharashtra 400001<br>India</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Call Us</h4>
+                                <p>+91 22 1234 5678<br>Mon-Fri: 9AM-6PM IST</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Email Us</h4>
+                                <p>support@indiakart.com<br>info@indiakart.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-quick-section">
+                    <h4>Quick Answers</h4>
+                    <div class="faq-item">
+                        <h5><i class="fas fa-question-circle"></i> How long does delivery take?</h5>
+                        <p>Standard delivery takes 3-5 business days across India.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5><i class="fas fa-question-circle"></i> What's your return policy?</h5>
+                        <p>We offer a 30-day hassle-free return policy on all products.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h5><i class="fas fa-question-circle"></i> Do you ship internationally?</h5>
+                        <p>Currently, we only ship within India.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <p>Map Integration</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Modal -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <button class="modal-close" id="modalCloseSuccess">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-header">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2>Message Sent!</h2>
+        </div>
+        <div class="modal-body">
+            <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

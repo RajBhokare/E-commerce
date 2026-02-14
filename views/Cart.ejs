@@ -1,8 +1,152 @@
 <%- include("partials/header") %>
 
-    <section class="section">
-        <h2>Your Cart</h2>
-        <p style="text-align:center;">Items are stored in your browser.</p>
-    </section>
+<!-- Cart Page -->
+<section class="cart-page">
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="fas fa-shopping-cart"></i>
+                Shopping Cart
+            </h1>
+            <p class="page-subtitle">Review your items before checkout</p>
+        </div>
 
-    <%- include("partials/footer") %>
+        <div class="cart-layout">
+            <!-- Cart Items -->
+            <div class="cart-items-section">
+                <div class="cart-header">
+                    <h2>Cart Items (<span id="cartItemCount">0</span>)</h2>
+                    <button class="clear-cart-btn" id="clearCartBtn">
+                        <i class="fas fa-trash"></i>
+                        Clear Cart
+                    </button>
+                </div>
+
+                <!-- Empty Cart Message -->
+                <div class="empty-cart" id="emptyCart">
+                    <div class="empty-cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Your cart is empty</h3>
+                    <p>Looks like you haven't added anything to your cart yet</p>
+                    <a href="/products" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Start Shopping</span>
+                    </a>
+                </div>
+
+                <!-- Cart Items Container -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary-section">
+                <div class="cart-summary">
+                    <h3 class="summary-title">Order Summary</h3>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span class="summary-value" id="subtotal">₹0</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span class="summary-value shipping-value" id="shipping">Free</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Tax (18%)</span>
+                        <span class="summary-value" id="tax">₹0</span>
+                    </div>
+                    
+                    <div class="summary-divider"></div>
+                    
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span class="summary-value" id="total">₹0</span>
+                    </div>
+
+                    <button class="checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-lock"></i>
+                        <span>Proceed to Checkout</span>
+                    </button>
+
+                    <div class="secure-checkout">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Checkout</span>
+                    </div>
+                </div>
+
+                <!-- Promo Code -->
+                <div class="promo-section">
+                    <h4>Have a promo code?</h4>
+                    <div class="promo-input-group">
+                        <input type="text" placeholder="Enter code" class="promo-input" id="promoInput">
+                        <button class="promo-btn" id="promoBtn">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <h4>We Accept</h4>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-google-pay"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Products -->
+        <div class="recommended-section">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="recommended-grid">
+                <div class="recommended-card">
+                    <img src="https://via.placeholder.com/150" alt="Product">
+                    <h4>Premium Product</h4>
+                    <p class="recommended-price">₹999</p>
+                    <button class="btn-small">Add to Cart</button>
+                </div>
+                <div class="recommended-card">
+                    <img src="https://via.placeholder.com/150" alt="Product">
+                    <h4>Featured Item</h4>
+                    <p class="recommended-price">₹1,299</p>
+                    <button class="btn-small">Add to Cart</button>
+                </div>
+                <div class="recommended-card">
+                    <img src="https://via.placeholder.com/150" alt="Product">
+                    <h4>Best Seller</h4>
+                    <p class="recommended-price">₹799</p>
+                    <button class="btn-small">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Checkout Modal -->
+<div class="modal" id="checkoutModal">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-header">
+            <i class="fas fa-check-circle"></i>
+            <h2>Order Placed Successfully!</h2>
+        </div>
+        <div class="modal-body">
+            <p>Thank you for your order. We'll send you a confirmation email shortly.</p>
+            <p class="order-number">Order #<span id="orderNumber"></span></p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" id="continueShoppingBtn">Continue Shopping</button>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

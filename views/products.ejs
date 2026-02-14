@@ -1,24 +1,108 @@
 <%- include("partials/header") %>
 
-    <section class="section">
-        <h2>Our Products</h2>
-
-        <div class="products">
-            <% products.forEach(product=> { %>
-                <div class="product-card">
-                    <img src="<%= product.image %>">
-                    <h3>
-                        <%= product.name %>
-                    </h3>
-                    <p class="price">₹<%= product.price %>
-                    </p>
-                    <button class="add-btn" data-name="<%= product.name %>" data-price="<%= product.price %>"
-                        data-image="<%= product.image %>">
-                        Add to Cart
-                    </button>
-                </div>
-                <% }) %>
+<!-- Products Page -->
+<section class="products-page">
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="page-header-content">
+                <h1 class="page-title">Our Products</h1>
+                <p class="page-subtitle">Discover our premium collection of quality products</p>
+            </div>
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-th"></i>
+                </button>
+                <button class="view-btn" data-view="list">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
         </div>
-    </section>
 
-    <%- include("partials/footer") %>
+        <!-- Filters and Sort -->
+        <div class="products-controls">
+            <div class="filters">
+                <div class="filter-group">
+                    <label>
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                    </label>
+                </div>
+                <div class="filter-group">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Living</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sort-group">
+                <select id="sortSelect" class="sort-select">
+                    <option value="default">Sort By</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <% products.forEach(product => { %>
+                <div class="product-card" data-name="<%= product.name.toLowerCase() %>" data-price="<%= product.price %>">
+                    <div class="product-image-wrapper">
+                        <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                        <div class="product-badge">New</div>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Premium</div>
+                        <h3 class="product-name"><%= product.name %></h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(4.5)</span>
+                        </div>
+                        <div class="product-bottom">
+                            <div class="product-price">
+                                <span class="price-current">₹<%= product.price %></span>
+                                <span class="price-original">₹<%= Math.round(product.price * 1.3) %></span>
+                            </div>
+                            <button class="add-to-cart-btn" 
+                                    data-name="<%= product.name %>" 
+                                    data-price="<%= product.price %>" 
+                                    data-image="<%= product.image %>">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No products found</h3>
+            <p>Try adjusting your search or filters</p>
+        </div>
+    </div>
+</section>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span>Product added to cart!</span>
+</div>
+
+<%- include("partials/footer") %>

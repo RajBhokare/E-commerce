@@ -1,9 +1,198 @@
 <%- include("partials/header") %>
 
-    <section class="hero">
-        <h1>Next Generation Shopping Experience</h1>
-        <p>Premium Products. Fast Delivery. Secure Payments.</p>
-        <a href="/products" class="btn">Explore Products</a>
-    </section>
+    <main>
+        <!-- Main Hero Banner (Full Width) -->
+        <section class="main-hero">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=600&fit=crop"
+                        alt="Premium Shopping Deals">
+                    <div class="hero-slide-content">
+                        <h2 class="hero-main-title gradient-text">Up to 70% OFF</h2>
+                        <p>Premium Products | Limited Time</p>
+                        <a href="/products" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="hero-slide">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&h=600&fit=crop"
+                        alt="New Arrivals">
+                    <div class="hero-slide-content">
+                        <h2 class="hero-main-title">New Arrivals</h2>
+                        <p>Latest Premium Collection</p>
+                        <a href="/products" class="btn btn-primary">Explore New</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Navigation Bar / Quick Links -->
+        <section class="quick-links">
+            <div class="container">
+                <div class="quick-links-grid">
+                    <a href="/products?category=electronics" class="quick-link">
+                        <i class="fas fa-laptop"></i>
+                        <span>Electronics</span>
+                    </a>
+                    <a href="/products?category=fashion" class="quick-link">
+                        <i class="fas fa-tshirt"></i>
+                        <span>Fashion</span>
+                    </a>
+                    <a href="/products?category=home" class="quick-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="/products?category=sports" class="quick-link">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Sports</span>
+                    </a>
+                    <a href="/deals" class="quick-link">
+                        <i class="fas fa-tags"></i>
+                        <span>Deals</span>
+                    </a>
+                    <a href="/brands" class="quick-link">
+                        <i class="fas fa-crown"></i>
+                        <span>Brands</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Deals Section (Carousel Style) -->
+        <section class="deals-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Today's Deals</h2>
+                    <div class="deals-nav">
+                        <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="deals-carousel">
+                    <div class="deals-track">
+                        <div class="deals-grid">
+                            <!-- Deal Product 1 -->
+                            <div class="deal-card">
+                                <div class="deal-image">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop"
+                                        alt="Headphones">
+                                </div>
+                                <div class="deal-price">₹1,999</div>
+                                <span class="deal-off">-50%</span>
+                            </div>
+                            <!-- Add more deal cards like screenshot -->
+                            <div class="deal-card">
+                                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop"
+                                    alt="Watch">
+                                <div class="deal-price">₹4,999</div>
+                                <span class="deal-off">-40%</span>
+                            </div>
+                            <div class="deal-card">
+                                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=300&h=300&fit=crop"
+                                    alt="Shirt">
+                                <div class="deal-price">₹799</div>
+                                <span class="deal-off">-60%</span>
+                            </div>
+                            <!-- Duplicate for carousel effect -->
+                            <div class="deal-card">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop"
+                                    alt="Headphones">
+                                <div class="deal-price">₹1,999</div>
+                                <span class="deal-off">-50%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Banners Row -->
+        <section class="promo-banners">
+            <div class="container">
+                <div class="promo-grid">
+                    <a href="/deals" class="promo-banner large">
+                        <div class="promo-content">
+                            <h3>Chocolate & Gifts</h3>
+                            <p>Up to 50% OFF</p>
+                        </div>
+                    </a>
+                    <a href="/new-launches" class="promo-banner">
+                        <div class="promo-content">
+                            <h3>Amazon Launchpad</h3>
+                            <p>New Brands</p>
+                        </div>
+                    </a>
+                    <a href="/fashion" class="promo-banner">
+                        <div class="promo-content">
+                            <h3>Revamp Your Style</h3>
+                            <p>Latest Fashion</p>
+                        </div>
+                    </a>
+                    <a href="/wholesale" class="promo-banner">
+                        <div class="promo-content">
+                            <h3>Wholesale Prices</h3>
+                            <p>EU Brands @18+ GST</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Grid -->
+        <section class="featured-products-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Bestsellers</div>
+                    <h2 class="section-title">Featured Products</h2>
+                </div>
+                <!-- Use the products-grid from previous response -->
+                <div class="products-grid">
+                    <!-- Your 5 product cards from previous response go here -->
+                </div>
+                <div class="text-center mt-5">
+                    <a href="/products" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Banner -->
+        <section class="brands-banner">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Top Brands Available</h2>
+                <div class="brands-grid">
+                    <div class="brand-logo">Apple</div>
+                    <div class="brand-logo">Samsung</div>
+                    <div class="brand-logo">Nike</div>
+                    <div class="brand-logo">Sony</div>
+                    <div class="brand-logo">Adidas</div>
+                    <div class="brand-logo">Boat</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Hero slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+
+        // Deals carousel
+        const track = document.querySelector('.deals-track');
+        const prevBtn = document.querySelector('.nav-btn.prev');
+        const nextBtn = document.querySelector('.nav-btn.next');
+        let dealsPos = 0;
+        prevBtn.addEventListener('click', () => {
+            dealsPos += 300;
+            track.style.transform = `translateX(${dealsPos}px)`;
+        });
+        nextBtn.addEventListener('click', () => {
+            dealsPos -= 300;
+            track.style.transform = `translateX(${dealsPos}px)`;
+        });
+    </script>
 
     <%- include("partials/footer") %>

@@ -1,11 +1,232 @@
 <%- include("partials/header") %>
 
-    <div class="form-box">
-        <h2>Create Account</h2>
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button class="btn">Register</button>
-    </div>
+<!-- Signup Page -->
+<section class="auth-page">
+    <div class="auth-container">
+        <div class="auth-layout">
+            <!-- Left Side - Branding -->
+            <div class="auth-branding">
+                <div class="auth-branding-content">
+                    <div class="auth-logo">
+                        <img src="/logo5.png" alt="IndiaKart">
+                        <h2>IndiaKart</h2>
+                    </div>
+                    <h1>Join Our Community</h1>
+                    <p>Create your account and start enjoying premium products with exclusive benefits</p>
+                    
+                    <div class="auth-features">
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Exclusive member discounts</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fast checkout experience</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Order tracking & history</span>
+                        </div>
+                        <div class="auth-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Personalized recommendations</span>
+                        </div>
+                    </div>
 
-    <%- include("partials/footer") %>
+                    <div class="auth-stats">
+                        <div class="auth-stat">
+                            <h3>10,000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="auth-stat">
+                            <h3>5,000+</h3>
+                            <p>Products Sold</p>
+                        </div>
+                        <div class="auth-stat">
+                            <h3>4.8/5</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Form -->
+            <div class="auth-form-section">
+                <div class="auth-form-container">
+                    <div class="auth-header">
+                        <h2>Create Account</h2>
+                        <p>Sign up to get started with IndiaKart</p>
+                    </div>
+
+                    <!-- Social Signup -->
+                    <div class="social-auth">
+                        <button class="social-btn google-btn">
+                            <i class="fab fa-google"></i>
+                            <span>Continue with Google</span>
+                        </button>
+                        <button class="social-btn facebook-btn">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Continue with Facebook</span>
+                        </button>
+                    </div>
+
+                    <div class="auth-divider">
+                        <span>or sign up with email</span>
+                    </div>
+
+                    <!-- Signup Form -->
+                    <form class="auth-form" id="signupForm">
+                        <div class="form-group">
+                            <label for="fullName">
+                                <i class="fas fa-user"></i>
+                                Full Name
+                            </label>
+                            <input 
+                                type="text" 
+                                id="fullName" 
+                                name="fullName" 
+                                placeholder="John Doe" 
+                                required
+                                autocomplete="name"
+                            >
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="john@example.com" 
+                                required
+                                autocomplete="email"
+                            >
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i>
+                                Phone Number
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="+91 98765 43210"
+                                autocomplete="tel"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fas fa-lock"></i>
+                                Password
+                            </label>
+                            <div class="password-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    placeholder="Create a strong password" 
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="password-toggle" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text"></span>
+                            </div>
+                            <span class="form-error" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                <i class="fas fa-lock"></i>
+                                Confirm Password
+                            </label>
+                            <div class="password-input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="confirmPassword" 
+                                    name="confirmPassword" 
+                                    placeholder="Re-enter your password" 
+                                    required
+                                    autocomplete="new-password"
+                                >
+                                <button type="button" class="password-toggle" id="toggleConfirmPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="form-error" id="confirmPasswordError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" required>
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">
+                                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">
+                                    Send me promotional emails and updates
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Create Account</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="/login" class="auth-link">Sign In</a></p>
+                    </div>
+
+                    <div class="secure-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Your data is secure and encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Modal -->
+<div class="modal" id="signupSuccessModal">
+    <div class="modal-content">
+        <button class="modal-close" id="modalCloseSignup">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-header">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2>Welcome to IndiaKart!</h2>
+        </div>
+        <div class="modal-body">
+            <p>Your account has been created successfully. You can now start shopping!</p>
+        </div>
+        <div class="modal-footer">
+            <a href="/products" class="btn btn-primary">Start Shopping</a>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>
