@@ -543,3 +543,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("✅ IndiaKart loaded successfully!");
 });
+
+// ============================================
+// DARK / LIGHT THEME TOGGLE
+// ============================================
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme") || "light";
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    if (themeIcon) {
+        themeIcon.classList.replace("fa-moon", "fa-sun");
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark");
+
+        // Swap icon
+        if (themeIcon) {
+            if (isDark) {
+                themeIcon.classList.replace("fa-moon", "fa-sun");
+            } else {
+                themeIcon.classList.replace("fa-sun", "fa-moon");
+            }
+        }
+
+        // Save preference
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+}
