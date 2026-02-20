@@ -1,152 +1,160 @@
 <%- include("partials/header") %>
 
-<!-- Cart Page -->
-<section class="cart-page">
-    <div class="container">
-        <!-- Page Header -->
-        <div class="page-header">
-            <h1 class="page-title">
-                <i class="fas fa-shopping-cart"></i>
-                Shopping Cart
-            </h1>
-            <p class="page-subtitle">Review your items before checkout</p>
-        </div>
+    <section class="cart-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header" style="text-align:left;padding:40px 0 32px;">
+                <h1 class="page-title"><i class="fas fa-shopping-cart"></i> Shopping Cart</h1>
+                <p class="page-subtitle">Review your items before checkout</p>
+            </div>
 
-        <div class="cart-layout">
-            <!-- Cart Items -->
-            <div class="cart-items-section">
-                <div class="cart-header">
-                    <h2>Cart Items (<span id="cartItemCount">0</span>)</h2>
-                    <button class="clear-cart-btn" id="clearCartBtn">
-                        <i class="fas fa-trash"></i>
-                        Clear Cart
-                    </button>
-                </div>
-
-                <!-- Empty Cart Message -->
-                <div class="empty-cart" id="emptyCart">
-                    <div class="empty-cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-header">
+                        <h2>Cart Items (<span id="cartItemCount">0</span>)</h2>
+                        <button class="clear-cart-btn" id="clearCartBtn">
+                            <i class="fas fa-trash"></i> Clear Cart
+                        </button>
                     </div>
-                    <h3>Your cart is empty</h3>
-                    <p>Looks like you haven't added anything to your cart yet</p>
-                    <a href="/products" class="btn btn-primary">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span>Start Shopping</span>
-                    </a>
+
+                    <!-- Empty State -->
+                    <div class="empty-cart" id="emptyCart">
+                        <div class="empty-cart-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>Your cart is empty</h3>
+                        <p>Looks like you haven't added anything to your cart yet</p>
+                        <a href="/products" class="btn btn-primary">
+                            <i class="fas fa-shopping-bag"></i> Start Shopping
+                        </a>
+                    </div>
+
+                    <!-- Cart Items Container -->
+                    <div class="cart-items" id="cartItems"></div>
                 </div>
 
-                <!-- Cart Items Container -->
-                <div class="cart-items" id="cartItems">
-                    <!-- Cart items will be dynamically inserted here -->
+                <!-- Cart Summary -->
+                <div class="cart-summary-section">
+                    <div class="cart-summary">
+                        <h3 class="summary-title">Order Summary</h3>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span class="summary-value" id="subtotal">₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="summary-value shipping-value" id="shipping">Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (18% GST)</span>
+                            <span class="summary-value" id="tax">₹0</span>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row summary-total">
+                            <span>Total</span>
+                            <span class="summary-value" id="total">₹0</span>
+                        </div>
+
+                        <button class="checkout-btn" id="checkoutBtn">
+                            <i class="fas fa-lock"></i> Proceed to Checkout
+                        </button>
+
+                        <div class="secure-checkout">
+                            <i class="fas fa-shield-alt"></i> <span>100% Secure Checkout</span>
+                        </div>
+                    </div>
+
+                    <!-- Promo Code -->
+                    <div class="promo-section">
+                        <h4><i class="fas fa-tag" style="color:var(--gold-dark);margin-right:6px;"></i>Have a Promo
+                            Code?</h4>
+                        <div class="promo-input-group">
+                            <input type="text" placeholder="Enter code (SAVE10)" class="promo-input" id="promoInput">
+                            <button class="promo-btn" id="promoBtn">Apply</button>
+                        </div>
+                        <p style="font-size:0.8rem;color:var(--text-light);margin-top:8px;">Try code: SAVE10</p>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="payment-methods">
+                        <h4>We Accept</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa" title="Visa"></i>
+                            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                            <i class="fab fa-cc-paypal" title="PayPal"></i>
+                            <i class="fab fa-google-pay" title="Google Pay"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Cart Summary -->
-            <div class="cart-summary-section">
-                <div class="cart-summary">
-                    <h3 class="summary-title">Order Summary</h3>
-                    
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span class="summary-value" id="subtotal">₹0</span>
+            <!-- Recommended -->
+            <div class="recommended-section">
+                <h2 class="section-title">You May Also Like</h2>
+                <div class="recommended-grid">
+                    <div class="recommended-card">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=200&h=160&fit=crop"
+                            alt="Smartwatch">
+                        <h4>Apple Watch SE</h4>
+                        <p class="recommended-price">₹29,990</p>
+                        <button class="btn-small btn btn-primary add-to-cart-btn" data-name="Apple Watch SE"
+                            data-price="29990"
+                            data-image="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=200">Add to
+                            Cart</button>
                     </div>
-                    
-                    <div class="summary-row">
-                        <span>Shipping</span>
-                        <span class="summary-value shipping-value" id="shipping">Free</span>
+                    <div class="recommended-card">
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=200&h=160&fit=crop"
+                            alt="Earbuds">
+                        <h4>Wireless Earbuds Pro</h4>
+                        <p class="recommended-price">₹9,999</p>
+                        <button class="btn-small btn btn-primary add-to-cart-btn" data-name="Wireless Earbuds Pro"
+                            data-price="9999"
+                            data-image="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=200">Add to
+                            Cart</button>
                     </div>
-                    
-                    <div class="summary-row">
-                        <span>Tax (18%)</span>
-                        <span class="summary-value" id="tax">₹0</span>
+                    <div class="recommended-card">
+                        <img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=200&h=160&fit=crop"
+                            alt="Yoga Mat">
+                        <h4>Premium Yoga Mat</h4>
+                        <p class="recommended-price">₹2,499</p>
+                        <button class="btn-small btn btn-primary add-to-cart-btn" data-name="Premium Yoga Mat"
+                            data-price="2499"
+                            data-image="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=200">Add to
+                            Cart</button>
                     </div>
-                    
-                    <div class="summary-divider"></div>
-                    
-                    <div class="summary-row summary-total">
-                        <span>Total</span>
-                        <span class="summary-value" id="total">₹0</span>
-                    </div>
-
-                    <button class="checkout-btn" id="checkoutBtn">
-                        <i class="fas fa-lock"></i>
-                        <span>Proceed to Checkout</span>
-                    </button>
-
-                    <div class="secure-checkout">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Secure Checkout</span>
-                    </div>
-                </div>
-
-                <!-- Promo Code -->
-                <div class="promo-section">
-                    <h4>Have a promo code?</h4>
-                    <div class="promo-input-group">
-                        <input type="text" placeholder="Enter code" class="promo-input" id="promoInput">
-                        <button class="promo-btn" id="promoBtn">Apply</button>
-                    </div>
-                </div>
-
-                <!-- Payment Methods -->
-                <div class="payment-methods">
-                    <h4>We Accept</h4>
-                    <div class="payment-icons">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                        <i class="fab fa-google-pay"></i>
+                    <div class="recommended-card">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&h=160&fit=crop"
+                            alt="Backpack">
+                        <h4>Laptop Backpack</h4>
+                        <p class="recommended-price">₹3,499</p>
+                        <button class="btn-small btn btn-primary add-to-cart-btn" data-name="Laptop Backpack"
+                            data-price="3499"
+                            data-image="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Recommended Products -->
-        <div class="recommended-section">
-            <h2 class="section-title">You May Also Like</h2>
-            <div class="recommended-grid">
-                <div class="recommended-card">
-                    <img src="https://via.placeholder.com/150" alt="Product">
-                    <h4>Premium Product</h4>
-                    <p class="recommended-price">₹999</p>
-                    <button class="btn-small">Add to Cart</button>
-                </div>
-                <div class="recommended-card">
-                    <img src="https://via.placeholder.com/150" alt="Product">
-                    <h4>Featured Item</h4>
-                    <p class="recommended-price">₹1,299</p>
-                    <button class="btn-small">Add to Cart</button>
-                </div>
-                <div class="recommended-card">
-                    <img src="https://via.placeholder.com/150" alt="Product">
-                    <h4>Best Seller</h4>
-                    <p class="recommended-price">₹799</p>
-                    <button class="btn-small">Add to Cart</button>
-                </div>
+    <!-- Checkout Success Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Placed!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your order. We'll send you a confirmation email shortly.</p>
+                <p class="order-number">Order #<span id="orderNumber"></span></p>
+            </div>
+            <div class="modal-footer">
+                <a href="/products" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Continue Shopping</a>
             </div>
         </div>
     </div>
-</section>
 
-<!-- Checkout Modal -->
-<div class="modal" id="checkoutModal">
-    <div class="modal-content">
-        <button class="modal-close" id="modalClose">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="modal-header">
-            <i class="fas fa-check-circle"></i>
-            <h2>Order Placed Successfully!</h2>
-        </div>
-        <div class="modal-body">
-            <p>Thank you for your order. We'll send you a confirmation email shortly.</p>
-            <p class="order-number">Order #<span id="orderNumber"></span></p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" id="continueShoppingBtn">Continue Shopping</button>
-        </div>
-    </div>
-</div>
-
-<%- include("partials/footer") %>
+    <%- include("partials/footer") %>
